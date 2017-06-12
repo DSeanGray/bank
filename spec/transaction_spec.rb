@@ -1,11 +1,10 @@
 describe Transaction do
 
-  subject(:transaction) { described_class.new }
-
-
-  it 'is initialized with todays date' do
-    expect(transaction.date).to eq(Date.today)
+  it 'can hold deposit information' do
+    transaction = Transaction.new(100, nil, 100)
+    expect(transaction.credit).to eq(100)
+    expect(transaction.debit).to eq(nil)
+    expect(transaction.balance).to eq(100)
   end
-
 
 end
