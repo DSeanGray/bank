@@ -5,7 +5,7 @@ class BankAccount
   DEFAULT_BALANCE = 0
 
   def initialize(balance = DEFAULT_BALANCE)
-    @balance = balance
+    @balance = 0
   end
 
   def deposit(amount)
@@ -13,7 +13,7 @@ class BankAccount
   end
 
   def withdraw(amount)
-    @balance = @balance - amount
+    @balance - amount < DEFAULT_BALANCE ? raise("Insufficient funds. Unable to process transaction.") : @balance = @balance - amount
   end
 
 end

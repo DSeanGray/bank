@@ -19,4 +19,8 @@ describe BankAccount do
     expect(account.balance).to eq(500)
   end
 
+  it 'does not allow bank balance to fall below 0' do
+    expect{ account.withdraw(1000) }.to raise_error "Insufficient funds. Unable to process transaction."
+  end
+
 end
